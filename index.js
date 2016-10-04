@@ -1,32 +1,24 @@
-function square_equation() {
-  var a = document.square.square_a.value;
-  var b = document.square.square_b.value;
-  var c = document.square.square_c.value;
-  var sol = document.getElementById("square_sol");
+var x1, x2, y, x,r;
 
-  var d = b * b - 4 * a * c;
-  if ( d < 0 ) {
-    string = ("пара комплексно-сопряженных корней<br>x<sub>1</sub> = (";
-    string += - b / ( 2 * a );
-    string += ", ";
-    string += Math.sqrt( -d ) / ( 2 * a );
-    string += "), x<sub>2</sub> = (";
-    string += - b / ( 2 * a);
-    string += ", ";
-    string += - Math.sqrt( -d ) / ( 2 * a );
-    string += ").";
-  } else {
-      if ( d == 0 ) {
-        string = "два одинаковых вещественных корня:<br>x<sub>1</sub> = x<sub>2</sub> = ";
-        string += -b / ( 2 * a );
-        string += ".";
-      } else {
-        string = "два различных вещественных корня:<br>x<sub>1</sub> = ";
-        string += -b / ( 2 * a ) - Math.sqrt( d ) / ( 2 * a );
-        string += ", x<sub>2</sub> = ";
-        string += -b / ( 2 * a ) + Math.sqrt( d ) / ( 2 * a );
-        string += ".";
-      }
-  }
-  sol.innerHTML = string;
+var a = Number(prompt('a'));
+var b = Number(prompt('b'));
+var c = Number(prompt('c'));
+var dis = b*b - 4*a*c;
+alert (dis);
+
+if (dis>0) {
+r="Так як дискримінант більше нуля то, квадратне рівняння має два дійсних кореня:"
+x1 = -b/(2*a)-Math.sqrt( dis)/(2*a);
+x2 = -b/(2*a)+Math.sqrt( dis)/(2*a);
+alert(r);
+alert(x1);
+alert(x2);
+} 
+if (dis<0){
+y = 'Так як дискримінант менше нуля, то рівняння не має дійсних коренів';
+alert(y);
+}
+if (dis==0){
+x=-b/ (2*a);
+alert(x);
 }
